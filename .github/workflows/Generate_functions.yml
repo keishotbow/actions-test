@@ -1,10 +1,12 @@
-name: Generate
+name: JSON functions
 on: workflow_dispatch
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - run: printenv | grep '_FUNC'
+      - run: echo "${CONTEXT}"
+	env:
+	  CONTEXT: ${{ toJson(github)  }}
 #        env:
 #	  FORMAT_FUNC: ${{ format("{0}, {1}.", 'Hello', 'world') }} 
 #	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
