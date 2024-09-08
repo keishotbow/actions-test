@@ -1,0 +1,12 @@
+name: JSON functions
+on: push
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+	env:
+	  CONTEXT: ${{ toJson(github) }}
+      - run: echo "${CONTEXT}"
+#        env:
+#	  FORMAT_FUNC: ${{ format("{0}, {1}.", 'Hello', 'world') }} 
+#	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
