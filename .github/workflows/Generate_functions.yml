@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: printenv | grep '_FUNC'
-        env:
+#        env:
 #	  FORMAT_FUNC: ${{ format("{0}, {1}.", 'Hello', 'world') }} 
-	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
+#	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
