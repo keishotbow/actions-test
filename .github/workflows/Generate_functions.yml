@@ -1,17 +1,10 @@
-name: Generate functions
-on: 
-  workflow_dispatch:
-    inputs:
-      arg:
-        type: string
-	default: ""
-	required: false
-	description: argument
+name: Generate
+on: workflow_dispatch
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
       - run: printenv | grep '_FUNC'
-        env:
-	  FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hello' , 'world') }} 
-	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
+#        env:
+#	  FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hello' , 'world') }} 
+#	  JOIN_FUNC: ${{ join(github.event.*.html_url, '. ') }}
