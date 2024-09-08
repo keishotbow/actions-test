@@ -4,7 +4,7 @@ jobs:
   show_context:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
+      - run: echo "${CONTEXT}"
         env:
           CONTEXT: ${{ toJson(github) }}
 #        env:
