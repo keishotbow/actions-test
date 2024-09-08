@@ -1,6 +1,12 @@
 name: Generate functions
 on: 
   workflow_dispatch:
+    inputs:
+      arg:
+        type: string
+	default: ""
+	required: false
+	description: argument
 jobs:
   generate:
     runs-on: ubuntu-latest
